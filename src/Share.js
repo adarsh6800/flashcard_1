@@ -1,6 +1,6 @@
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import React, {useState} from 'react'
+import {useState} from 'react'
 import { BiCopyAlt } from "react-icons/bi";
 import { AiOutlineShareAlt } from "react-icons/ai";
 import { FacebookShareButton, FacebookIcon } from "react-share";
