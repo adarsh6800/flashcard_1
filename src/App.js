@@ -1,23 +1,21 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
-import Share from './Share'
-import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import Share from "./Share";
+import React, { useState } from "react";
+import Button from "react-bootstrap/Button";
 
 function App() {
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
-    <div className='App'>
-    <Button variant="danger" onClick={() => setModalShow(true)}>
-      <span> Share </span>
-    </Button>
+    <div className="App">
+      <Button variant="danger" onClick={() => setModalShow(true)}>
+        <span> Share </span>
+      </Button>
 
-    <Share
-      show={modalShow}
-      onHide={() => setModalShow(false)}
-    />
-  </div>
+      <div>This is oshan Commit</div>
+      <Share show={modalShow} onHide={() => setModalShow(false)} />
+    </div>
   );
 }
 
