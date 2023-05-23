@@ -1,24 +1,23 @@
-import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Share from './Share'
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
 
 function App() {
+  const [modalShow, setModalShow] = React.useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className='App'>
+    <Button variant="danger" onClick={() => setModalShow(true)}>
+      <span> Share </span>
+    </Button>
+
+    <Share
+      show={modalShow}
+      onHide={() => setModalShow(false)}
+    />
+  </div>
   );
 }
 
