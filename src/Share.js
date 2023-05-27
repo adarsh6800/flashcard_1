@@ -23,10 +23,11 @@ function Share(props) {
   const text= 'https://www.almabetter.com/abcde';
   // const [text, setText] = useState('https://www.almabetter.com/abcde');
 
+  const [open, setOpen] = useState(true);
 
   return (
     <Modal
-      {...props}
+      {...props}s
       size="lg-down"
       aria-labelledby="contained-modal-title-vcenter"
       centered
@@ -38,49 +39,51 @@ function Share(props) {
         <div className="butt">
           <strong> Link : </strong><textarea className="bu" onChange={handleOnChange} id="myBox" value={text} readOnly={true}> https://www.almabetter.com/abcde </textarea>
           <BiCopyAlt size={20} onClick={handleCopy} id="myBox" className="copyicon" />
-          <AiOutlineShareAlt size={25} className="copyicon" />
+          <AiOutlineShareAlt onClick={() => setOpen(!open)} size={25} className="copyicon" />
         </div>
       </Modal.Body>
-      <Modal.Body >
-        <FacebookShareButton
-          url={"https://www.almabetter.com/abcde"}
-          quote={"This is all about Almabetter"}
-          hashtag="#Almabetter"
-        >
-                
-          <FacebookIcon size={32} round />
-        </FacebookShareButton>
-        <LinkedinShareButton
-          url={"https://www.almabetter.com/abcde"}
-          title={"All about Almabetter"}
-        >
-                
-          <LinkedinIcon size={32} round />
-        </LinkedinShareButton>
-        <WhatsappShareButton
-          url={"https://www.almabetter.com/abcde"}
-          title={"All about Almabetter"}
-        >
-                
-          <WhatsappIcon size={32} round />
-        </WhatsappShareButton>
-        <TwitterShareButton
-          url={"https://www.almabetter.com/abcde"}
-          quote={"This is all about Almabetter"}
-          hashtag="#Almabetter"
-        >
-                
-          <TwitterIcon size={32} round />
-        </TwitterShareButton>
-        <EmailShareButton
-          url={"https://www.almabetter.com/abcde"}
-          subject={"All about Almabetter"}
-          body={"dummy text!"}
-        >
-                
-          <EmailIcon size={32} round />
-        </EmailShareButton>
-      </Modal.Body>
+      {!open && (
+        <Modal.Body >
+          <FacebookShareButton
+            url={"https://www.almabetter.com/abcde"}
+            quote={"This is all about Almabetter"}
+            hashtag="#Almabetter"
+          >
+                  
+            <FacebookIcon size={32} round />
+          </FacebookShareButton>
+          <LinkedinShareButton
+            url={"https://www.almabetter.com/abcde"}
+            title={"All about Almabetter"}
+          >
+                  
+            <LinkedinIcon size={32} round />
+          </LinkedinShareButton>
+          <WhatsappShareButton
+            url={"https://www.almabetter.com/abcde"}
+            title={"All about Almabetter"}
+          >
+                  
+            <WhatsappIcon size={32} round />
+          </WhatsappShareButton>
+          <TwitterShareButton
+            url={"https://www.almabetter.com/abcde"}
+            quote={"This is all about Almabetter"}
+            hashtag="#Almabetter"
+          >
+                  
+            <TwitterIcon size={32} round />
+          </TwitterShareButton>
+          <EmailShareButton
+            url={"https://www.almabetter.com/abcde"}
+            subject={"All about Almabetter"}
+            body={"dummy text!"}
+          >
+                  
+            <EmailIcon size={32} round />
+          </EmailShareButton>
+        </Modal.Body>
+      )}
     </Modal>
   );
 }
